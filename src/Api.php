@@ -32,7 +32,43 @@ class Api {
      * @return class table          Classe DAO des résultats.
      */
     
+    /**
+     * Connection de l'utilisateur
+     * @param string $user nom d'utilisateur
+     * @param string $mdp  mot de passe EN MD5!
+     * @return type
+     */
+    
+    static function Connect($user, $mdp) {
+        return urldecode('172.21.4.10/goVoiture/connect/'.$user.'/'.$mdp);
+    }
+    
     static function fetchByForeign($table, $tableForeign, $id) {
         return json_decode(urldecode('172.21.4.10/goVoiture/foreign/'.$table.'/'.$tableForeign.'/'.$id));
     }
+    
+    
+    /**
+     * insertion de typeFrais
+     * @param array $row            Ligne d'enregistrement à ajouter (libelle, forfait)
+     */
+    static function insertTypeFrais($row) {
+        urldecode('172.21.4.10/goVoiture/insertTypeFrais/'.$row[0].'/'.$row[1]);
+    }
+    /**
+     * insertion de ficheFrais
+     * @param array $row            Ligne d'enregistrement à ajouter (mois, nbHorsClassif, montantHorsClassif)
+     */
+         
+    static function insertFicheFrais($row) {
+        urldecode('172.21.4.10/goVoiture/insertFicheFrais/'.$row[0].'/'.$row[1].'/'.$row[2]);
+    }
+    /**
+     * 
+     * @param type $row Ligne d'enregistrement à ajouter (matricule, nom, adresse, codePostal, ville, dateEmbauche, departement_id, ficheFrais_id, secteur_id)
+     */
+    static function insertVisiteur($row) {
+        urldecode('172.21.4.10/goVoiture/insertVisiteur/'.$row[0].'/'.$row[1].'/'.$row[2].'/'.$row[3].'/'.$row[4].'/'.$row[5].'/'.$row[6].'/'.$row[7]);
+    }
+    
 }
