@@ -11,6 +11,8 @@
  *
  * @author usersio
  */
+namespace appliFrais\domain;
+
 class visiteur {
     
     private $id;
@@ -20,9 +22,9 @@ class visiteur {
     private $codePostal;
     private $ville;
     private $dateembauche;
-    private $departement_id;
-    private $fichefrais_id;
-    private $secteur_id;
+    private $departement;
+    private $fichefrais;
+    private $secteur;
     
     public function setId($id){
         $this->id=$id;
@@ -50,7 +52,7 @@ class visiteur {
     }
 
     
-    public function setadresse($adresse) {
+    public function setAdresse($adresse) {
         $this->matricule=$adresse;
     }
     
@@ -59,7 +61,7 @@ class visiteur {
     }
 
     
-    public function setcodePostal($codePostal) {
+    public function setCodePostal($codePostal) {
         $this->matricule=$codePostal;
     }
     
@@ -77,7 +79,7 @@ class visiteur {
     }
 
     
-    public function setdateembauche($dateembauche) {
+    public function setDateEmbauche($dateembauche) {
         $this->matricule=$dateembauche;
     }
     
@@ -86,29 +88,29 @@ class visiteur {
     }
 
     
-    public function setFicheFrais_id($fichefrais_id) {
+    public function setFicheFrais(FicheFrais $fichefrais_id) {
         $this->matricule=$fichefrais_id;
     }
     
-     public function getFicheFrais_id(){
-        return $this->fichefrais_id;
+     public function getFicheFrais(){
+        return $this->fichefrais;
     }
 
     
-    public function setDepartement_id($departement_id) {
+    public function setDepartement(Departement $departement_id ) {
         $this->matricule=$departement_id;
     }
     
-     public function getDepartement_id(){
-        return $this->departement_id;
+     public function getDepartement(){
+        return $this->departement;
     }
 
-    public function setSecteur_id($secteur_id) {
+    public function setSecteur(Secteur $secteur_id) {
         $this->matricule=$secteur_id;
     }
     
-     public function getSecteur_id(){
-        return $this->secteur_id;
+     public function getSecteur(){
+        return $this->secteur;
     }
 
 }

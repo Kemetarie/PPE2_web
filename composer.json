@@ -3,5 +3,11 @@
         "twig/twig": "1.21.*",
         "silex/silex": "2.*",
         "doctrine/dbal": "^2.5"
+    },
+    "autoload":{
+        "psr-4":{
+            "appliFrais\\":"src",
+            "Tools\\":"Tools"
+        }
     }
 }
